@@ -80,7 +80,7 @@
                         </div>
                         <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
                             <div class="card-block px-lg-7 px-4 pt-6 pb-5">
-                                <form method="post" action="{{ url('/register') }}">
+                                <form method="post" action='/register'>
                                     @csrf
                                     <div class="form-group mb-2"><input class="form-control rounded" type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}"></div>
                                     <div class="form-group mb-2"><input class="form-control rounded" type="password" id="password" name="password" placeholder="Mot de passe" value="{{ old('password') }}"></div>
