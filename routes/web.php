@@ -25,6 +25,14 @@ Route::get('/enter', function () {
     return view('enter');
 });
 
+Route::post('/login','App\Http\Controllers\UserController@login');
+
+Route::post('/register','App\Http\Controllers\UserController@register');
+
+Route::get('/logout','App\Http\Controllers\UserController@logout');
+
+Route::get('/profile','App\Http\Controllers\Controller@profile');
+
 Route::get('/password-recovery', function () {
     return view('password-recovery');
 });
@@ -39,10 +47,6 @@ Route::get('/article', function () {
 
 Route::get('/contact', function () {
     return view('contact');
-});
-
-Route::get('/profile', function () {
-    return view('profile');
 });
 
 Route::get('/about', function () {

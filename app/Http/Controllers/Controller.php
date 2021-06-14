@@ -10,4 +10,13 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function profile(){
+        if (session('user') != null){
+            return view('profile');
+        }
+        else{
+            return view('enter');
+        }
+    }
 }

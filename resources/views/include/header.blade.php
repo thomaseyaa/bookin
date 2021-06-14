@@ -16,7 +16,11 @@
                     <li class="nav-item mx-1"><a class="nav-link text-dark" href="/home">Accueil</a></li>
                     <li class="nav-item mx-1"><a class="nav-link text-dark" href="/news">Actualités</a></li>
                     <li class="nav-item mx-1"><a class="nav-link text-dark" href="/contact">Contact</a></li>
-                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/enter">Connexion/Inscription</a></li>
+                    @if(session('user') != null)
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/logout">Déconnexion</a></li>
+                    @else
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/enter">Connexion/Inscription</a></li>
+                    @endif
                 </ul>
             </div>
         </div>

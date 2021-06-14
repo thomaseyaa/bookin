@@ -13,7 +13,7 @@
                 </ul>
             </div>
             <div class="col-lg-8 col-md-12 col-sm-12 pt-12 pb-12" id="text">
-                <h1 class="display-4">Nom utilisateur</h1>
+                <h1 class="display-4">{{ session('user')->email }}</h1>
                 <p class="lead">Abonnement Basic</p>
                 <span>Prochaine date de facturation : 28 juillet 2021.</span><br>
                 <a href="#">Utiliser une carte cadeau ou un code de promotion.</a>
