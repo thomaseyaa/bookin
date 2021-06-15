@@ -15,11 +15,11 @@
                             </div>
                         </div>
                         <div class="card-block px-lg-7 px-4 pb-6">
-                            <p class="lead text-muted mb-4 mr-3">Entrez l'email que vous avez utilisé lors de votre enregistrement pour récupérer votre mot de passe ou <a href="/contact">contactez-nous</a> si vous avez besoin d'aide</p>
+                            <p class="lead text-muted mb-4 mr-3">Entrez l'email que vous avez utilisé lors de votre enregistrement pour récupérer votre mot de passe ou <a href="/contact">contactez-nous</a> si vous avez besoin d'aide.</p>
                             <form>
                                 <div class="input-group mb-5">
                                     <input class="form-control rounded mx-0 mr-2" type="text" placeholder="Email">
-                                    <button class="btn btn-primary-light text-primary" type="button">Envoyer</button>
+                                    <button class="btn btn-primary text-white" type="button">Envoyer</button>
                                 </div>
                                 <a class="text-muted" href="/enter">
                                     <i class="fas fa-caret-square-left mr-2"></i>

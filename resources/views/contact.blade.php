@@ -24,7 +24,7 @@
                     <div class="form-group mb-5">
                         <textarea class="form-control rounded" rows="6" placeholder="Message"></textarea>
                     </div>
-                    <button class="btn btn-primary-light text-primary mb-3 w-100" type="submit">Envoyer</button>
+                    <button class="btn btn-primary text-white text-primary mb-3 w-100" type="submit">Envoyer</button>
                 </form>
             </div>
             <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">

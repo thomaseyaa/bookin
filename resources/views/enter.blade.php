@@ -54,7 +54,7 @@
                                             <span class="small">Garder ma session</span>
                                         </label>
                                     </div>
-                                    <button class="btn btn-primary-light text-primary rounded-pill mb-4 w-100" type="submit">Connexion</button>
+                                    <button class="btn btn-primary text-white rounded-pill mb-4 w-100" type="submit">Connexion</button>
 
                                     <div>
                                         <div class="col text-center pb-3">
@@ -91,7 +91,7 @@
                                             <small>Accepter notre politique de <a href="javaScript:void(0)">confidentialité</a></small>
                                         </label>
                                     </div>
-                                    <button class="btn btn-primary-light text-primary rounded-pill mb-4 w-100" type="submit">Register</button>
+                                    <button class="btn btn-primary text-white rounded-pill mb-4 w-100" type="submit">Register</button>
 
                                     <div>
                                         <div class="col text-center pb-3">
