@@ -45,7 +45,7 @@ Route::post('/updatePassword','App\Http\Controllers\UserController@updatePasswor
 
 // Admin Controller
 Route::get('/admin','App\Http\Controllers\AdminController@admin');
-
+Route::get('/usersList','App\Http\Controllers\AdminController@usersList');
 
 // Autre
 Route::get('/news', function () {
@@ -62,6 +62,10 @@ Route::get('/contact', function () {
 
 Route::get('/about', function () {
     return view('about');
+});
+
+Route::get('/price', function () {
+    return view('price');
 });
 
 Route::get('/faq', function () {

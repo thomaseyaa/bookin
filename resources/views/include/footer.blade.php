@@ -31,7 +31,7 @@
                         <a class="text-muted" href="/about">À propos de nous</a>
                     </li>
                     <li class="mb-2">
-                        <a class="text-muted" href="/price">Prix</a>
+                        <a class="text-muted" href="/price">Tarifs</a>
                     </li>
                     <li class="mb-2">
                         <a class="text-muted" href="/privacy">Politique de confidentialité</a>

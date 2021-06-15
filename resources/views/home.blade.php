@@ -93,7 +93,6 @@
     <div class="container mb-12">
         <div class="row">
             <div class="card-deck m-auto">
-                <!-- border-primary border-width-5 -->
                 <div class="card bg-gray-light border-radius-10 mx-2">
                     <div class="card-body px-6 pt-6">
                         <div class="mb-5 row">
