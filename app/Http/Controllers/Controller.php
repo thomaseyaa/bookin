@@ -14,7 +14,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function enter(){
-        if (session('user') != null){
+        if (!session('user') == null){
             return redirect('profile');
         }
         return view('enter');
@@ -40,7 +40,7 @@ class Controller extends BaseController
             if (session('user')->is_admin !== 0){
                 return redirect('admin');
             }
-            return redirect('/profile');
+            return redirect('/price');
         }
         else{
             return redirect('/enter')->with('error', "Le mot de passe n'est pas correct")->withInput();
@@ -74,7 +74,7 @@ class Controller extends BaseController
 
     public function logout(){
 
-        if (session('user') != null){
+        if (!session('user') == null){
             session(['user' => null]);
             return redirect('/home');
         }
@@ -84,14 +84,9 @@ class Controller extends BaseController
     }
 
     public function profile(){
-        if (session('user') != null){
-            session()->flash('status', 'error');
-            session()->flash('message', "Vous êtes déjà connectez !");
-
-            return view('profile');
-        }
-        else{
+        if (session('user') == null){
             return view('enter');
         }
+        return view('profile');
     }
 }

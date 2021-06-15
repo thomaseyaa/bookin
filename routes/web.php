@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Home
 Route::get('/', function () {
     return view('home');
 });
@@ -20,6 +21,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
 
 // Controller
 Route::get('/enter','App\Http\Controllers\Controller@enter');
@@ -46,6 +48,10 @@ Route::post('/updatePassword','App\Http\Controllers\UserController@updatePasswor
 // Admin Controller
 Route::get('/admin','App\Http\Controllers\AdminController@admin');
 Route::get('/usersList','App\Http\Controllers\AdminController@usersList');
+Route::get('/adminUserForm', 'App\Http\Controllers\AdminController@adminUserForm');
+Route::post('/adminUpdateUser/{id}','App\Http\Controllers\AdminController@adminUpdateUser');
+Route::get('/adminDeleteUser/{id}','App\Http\Controllers\AdminController@adminDeleteUser');
+
 
 // Autre
 Route::get('/news', function () {
@@ -74,12 +80,4 @@ Route::get('/faq', function () {
 
 Route::get('/privacy', function () {
     return view('privacy');
-});
-
-Route::get('/404', function () {
-    return view('404');
-});
-
-Route::fallback(function() {
-    return view('404');
 });
