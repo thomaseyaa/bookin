@@ -18572,14 +18572,6 @@ a.text-twitter:focus {
           background-size: auto 100%
 }
 
-.navbar-light .navbar-brand span {
-          background-image: url("/images/logo-black.svg")
-}
-
-.navbar-dark .navbar-brand span {
-          background-image: url("/images/logo-white.svg")
-}
-
 .navbar-light-scrolled {
           background: white !important;
           box-shadow: 0 0 3px rgba(0, 0, 0, 0.3)

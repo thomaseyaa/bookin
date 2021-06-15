@@ -11,7 +11,9 @@
                         <p class="my-0">19 Rue Yves Toudic, Paris</p>
                     </li>
                     <li class="mb-2 text-muted">
-                        <p class="my-0">+33750047497</p>
+                        <a class="text-muted" href="tel:+33750047497">
+                            <p class="my-0">+33750047497</p>
+                        </a>
                     </li>
                     <li class="mb-2 text-muted">
                         <a class="text-muted" href="mailto:contact@bookin.com">
