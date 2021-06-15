@@ -21,22 +21,33 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/enter', function () {
-    return view('enter');
+// Controller
+Route::get('/enter','App\Http\Controllers\Controller@enter');
+
+Route::post('/login','App\Http\Controllers\Controller@login');
+
+Route::post('/register','App\Http\Controllers\Controller@register');
+
+Route::get('/logout','App\Http\Controllers\Controller@logout');
+
+Route::get('/passwordRecovery', function () {
+    return view('passwordRecovery');
 });
 
-Route::post('/login','App\Http\Controllers\UserController@login');
 
-Route::post('/register','App\Http\Controllers\UserController@register');
+// User Controller
+Route::get('/profile','App\Http\Controllers\UserController@profile');
+Route::get('/profileForm','App\Http\Controllers\UserController@profileForm');
+Route::post('/updateUser','App\Http\Controllers\UserController@updateUser');
+Route::get('/passwordForm','App\Http\Controllers\UserController@passwordForm');
+Route::post('/updatePassword','App\Http\Controllers\UserController@updatePassword');
 
-Route::get('/logout','App\Http\Controllers\UserController@logout');
 
-Route::get('/profile','App\Http\Controllers\Controller@profile');
+// Admin Controller
+Route::get('/admin','App\Http\Controllers\AdminController@admin');
 
-Route::get('/password-recovery', function () {
-    return view('password-recovery');
-});
 
+// Autre
 Route::get('/news', function () {
     return view('news');
 });
@@ -59,6 +70,10 @@ Route::get('/faq', function () {
 
 Route::get('/privacy', function () {
     return view('privacy');
+});
+
+Route::get('/404', function () {
+    return view('404');
 });
 
 Route::fallback(function() {

@@ -8,63 +8,79 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function login(){
-
-        request()->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        $result = DB::selectOne('select * from users where email = :email', ['email' => $_POST['email']]);
-        session(['user' => $result]);
-
-        if ($result == null){
-            return redirect('/enter')->with('error', "Votre compte n'existe pas")->withInput();
-        }
-        if (!Hash::check($_POST['password'], $result->password)){
-            $result = false;
-        }
-        if ($result){
-            return redirect('/profile');
-        }
-        else{
-            return redirect('/enter')->with('error', "Le mot de passe n'est pas correct")->withInput();
+    public function checkSession(){
+        if (session('user') == null){
+            return redirect('home');
         }
     }
 
-    public function register(){
+    public function profile(){
+        if (session('user') == null){
+            return redirect('home');
+        }
+        return view('profile');
+    }
+
+    public function profileForm(){
+        if (session('user') == null){
+            return redirect('home');
+        }
+        return view('profileForm');
+    }
+
+    function updateUser(){
+
+        if (session('user') == null){
+            return redirect('home');
+        }
 
         request()->validate([
-            'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed',
-            'password_confirmation' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
         ]);
 
-        $_POST['password'] = Hash::make($_POST['password']);
-
-        $result = DB::insert('insert into users (email, password) values (?, ?)', [$_POST['email'], $_POST['password']]);
+        $result = DB::update('update users set firstname = ?, lastname = ?, email = ?  where id = ?', [$_POST['firstname'] , $_POST['lastname'], $_POST['email'], session('user')->id]);
+        $user = DB::selectOne('select * from users where id = :id', ['id' => session('user')->id]);
 
         if ($result){
-            return redirect('/enter');
-        }
-        else{
-            return redirect('/enter')->with('error', "Quelque chose ne fonctionne pas ")->withInput();
+            session(['user'=> $user]);
         }
 
         session()->flash('status', 'success');
-        session()->flash('message', "Inscription réussie, vous pouvez vous connectez !");
+        session()->flash('message',"Modification enregistrée");
 
-        return redirect('/enter');
+        return redirect('/profile');
     }
 
-    public function logout(){
+    public function passwordForm(){
+        if (session('user') == null){
+            return redirect('home');
+        }
+        return view('passwordForm');
+    }
 
-        if (session('user') != null){
-            session(['user' => null]);
-            return redirect('/home');
+    function updatePassword(){
+
+        if (session('user') == null){
+            return redirect('home');
         }
-        else{
-            return redirect('/profile');
-        }
+
+        request()->validate([
+            'password' => 'required',
+        ]);
+
+        $_POST['password'] = Hash::make($_POST['password']);
+        $result = DB::update('update users set password = ?  where id = ?', [$_POST['password'], session('user')->id]);
+        $user = DB::selectOne('select * from users where id = :id', ['id' => session('user')->id]);
+
+       if ($result){
+           session(['user'=> $user]);
+       }
+
+        session()->flash('status', 'success');
+        session()->flash('message',"Modification enregistrée");
+
+        return redirect('/profile');
     }
 }

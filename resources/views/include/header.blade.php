@@ -13,9 +13,13 @@
                     <input class="form-control rounded-pill bg-white" type="search" placeholder="Recherche" aria-label="Recherche">
                 </form>
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/home">Accueil</a></li>
-                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/news">Actualités</a></li>
-                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/contact">Contact</a></li>
+                    @if(session('user') != null)
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/profile">Profil</a></li>
+                    @else
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/home">Accueil</a></li>
+                    @endif
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/news">Actualités</a></li>
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/contact">Contact</a></li>
                     @if(session('user') != null)
                         <li class="nav-item mx-1"><a class="nav-link text-dark" href="/logout">Déconnexion</a></li>
                     @else
