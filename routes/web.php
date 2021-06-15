@@ -61,6 +61,6 @@ Route::get('/privacy', function () {
     return view('privacy');
 });
 
-Route::get('/404', function () {
+Route::fallback(function() {
     return view('404');
 });

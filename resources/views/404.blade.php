@@ -11,7 +11,7 @@
         <div class="text-center">
             <p class="lead mb-5 mr-5">La page que vous recherchez est introuvable.</p>
             <a href="/">
-                <button class="btn btn-gray px-5 mr-1" type="button">Retiurner à la page d'accueil</button>
+                <button class="btn btn-gray px-5 mr-1" type="button">Retourner à la page d'accueil</button>
             </a>
         </div>
     </div>
