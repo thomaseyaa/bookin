@@ -9,42 +9,39 @@
             </div>
         </div>
 
-        <div class="mx-auto">
-            @if(session('status'))
-                <div class="alert alert-success text-center">{{ session('message') }}</div>
-            @endif
-
-            @if(session('error'))
-                <div class="alert alert-danger text-center ">{{ session('error') }}</div>
-            @endif
-        </div>
-
         <div class="row">
             <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+                @if(session('status'))
+                    <p class="text-success text-center">{{ session('message') }}</p>
+                @endif
+
+                @if(session('error'))
+                    <p class="text-success text-center ">{{ session('error') }}</p>
+                @endif
                 <form method="post" action="/sendMessage">
                     @csrf
                     <div class="form-row">
                         <div class="form-group col-lg-4 col-md-12 col-sm-12 pr-2">
-                            <input class="form-control rounded" type="text" name="lastname" placeholder="Nom" value="">
+                            <input class="form-control rounded" type="text" name="lastname" placeholder="Nom" value="{{ old('lastname') }}">
                             @error('lastname')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group col-lg-4 col-md-12 col-sm-12 px-2">
-                            <input class="form-control rounded" type="text" name="firstname" placeholder="Prénom">
+                            <input class="form-control rounded" type="text" name="firstname" placeholder="Prénom" value="{{ old('firstname') }}">
                             @error('firstname')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group col-lg-4 col-md-12 col-sm-12 pl-2">
-                            <input class="form-control rounded" type="text"  name="email" placeholder="Email">
+                            <input class="form-control rounded" type="text"  name="email" placeholder="Email" value="{{ old('email') }}">
                             @error('email')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group mb-5">
-                        <textarea class="form-control rounded" rows="6" name="body" placeholder="Message"></textarea>
+                        <textarea class="form-control rounded" rows="6" name="body" placeholder="Message" value="{{ old('body') }}"></textarea>
                         @error('body')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -52,6 +49,7 @@
                     <button class="btn btn-primary text-white text-primary mb-3 w-100" type="submit">Envoyer</button>
                 </form>
             </div>
+
             <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
                 <div class="rounded mt-8 mb-8" id="map" style="margin: auto; height: 400px; !important"></div>
                 <script
