@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function checkSession(){
-        if (session('user') == null){
-            return redirect('home');
-        }
-    }
-
     public function profile(){
+
         if (session('user') == null){
-            return redirect('home');
+            return view('auth');
         }
         return view('profile');
     }
 
     public function profileForm(){
+
         if (session('user') == null){
             return redirect('home');
         }
@@ -48,12 +43,13 @@ class UserController extends Controller
         }
 
         session()->flash('status', 'success');
-        session()->flash('message',"Modification enregistrée");
+        session()->flash('message',"Modification enregistrée !");
 
         return redirect('/profile');
     }
 
     public function passwordForm(){
+
         if (session('user') == null){
             return redirect('home');
         }

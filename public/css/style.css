@@ -7115,13 +7115,13 @@ a.badge-twitter.focus {
 }
 
 .alert-success {
-          color: #d1f0f2;
-          background-color: #1bb4bf;
-          border-color: #1ba9b3
+          color: #d4edda;
+          background-color: #28a745;
+          border-color: #28a745
 }
 
 .alert-success hr {
-          border-top-color: #18949d
+          border-top-color: #d4edda
 }
 
 .alert-success .alert-link {

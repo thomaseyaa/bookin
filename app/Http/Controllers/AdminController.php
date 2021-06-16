@@ -9,15 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function checkAdmin(){
-        if (!session('user')->is_admin){
-            return redirect('403');
-        }
-    }
-
     public function admin(){
         if (session('user') == null){
-            return view('enter');
+            return view('auth');
         }
         if (!session('user')->is_admin){
             return redirect('403');
@@ -27,7 +21,7 @@ class AdminController extends Controller
 
     public function usersList(){
         if (session('user') == null){
-            return view('enter');
+            return view('auth');
         }
         if (!session('user')->is_admin){
             return redirect('403');
@@ -39,7 +33,7 @@ class AdminController extends Controller
 
     public function adminUserForm($id=0){
         if (session('user') == null){
-            return view('enter');
+            return view('auth');
         }
         if (!session('user')->is_admin){
             return redirect('403');
@@ -52,7 +46,7 @@ class AdminController extends Controller
 
     public function adminAddUser(Request $request){
         if (session('user') == null){
-            return view('enter');
+            return view('auth');
         }
         if (!session('user')->is_admin){
             return redirect('403');
@@ -77,7 +71,7 @@ class AdminController extends Controller
 
     public function adminUpdateUser(Request $request, $id){
         if (session('user') == null){
-            return view('enter');
+            return view('auth');
         }
         if (!session('user')->is_admin){
             return redirect('403');
@@ -109,7 +103,7 @@ class AdminController extends Controller
 
     public function adminDeleteUser($id){
         if (session('user') == null){
-            return view('enter');
+            return view('auth');
         }
         if (!session('user')->is_admin){
             return redirect('403');

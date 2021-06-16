@@ -23,14 +23,14 @@ Route::get('/home', function () {
 });
 
 
-// Controller
-Route::get('/enter','App\Http\Controllers\Controller@enter');
+// Auth Controller
+Route::get('/auth','App\Http\Controllers\AuthController@auth');
 
-Route::post('/login','App\Http\Controllers\Controller@login');
+Route::post('/login','App\Http\Controllers\AuthController@login');
 
-Route::post('/register','App\Http\Controllers\Controller@register');
+Route::post('/register','App\Http\Controllers\AuthController@register');
 
-Route::get('/logout','App\Http\Controllers\Controller@logout');
+Route::get('/logout','App\Http\Controllers\AuthController@logout');
 
 Route::get('/passwordRecovery', function () {
     return view('passwordRecovery');
@@ -52,6 +52,9 @@ Route::get('/adminUserForm', 'App\Http\Controllers\AdminController@adminUserForm
 Route::post('/adminUpdateUser/{id}','App\Http\Controllers\AdminController@adminUpdateUser');
 Route::get('/adminDeleteUser/{id}','App\Http\Controllers\AdminController@adminDeleteUser');
 
+// Contact Controller
+Route::get('/contact','App\Http\Controllers\ContactController@contact');
+Route::post('/sendMessage','App\Http\Controllers\ContactController@sendMessage');
 
 // Autre
 Route::get('/news', function () {
@@ -60,10 +63,6 @@ Route::get('/news', function () {
 
 Route::get('/article', function () {
     return view('article');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
 });
 
 Route::get('/about', function () {

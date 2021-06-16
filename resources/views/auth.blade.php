@@ -26,7 +26,7 @@
                         <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
                             <div class="card-block px-lg-7 px-4 pt-6 pb-5">
                                 @if(session('status'))
-                                    <div class="alert alert-success text-center">{{ session('status') }}</div>
+                                    <div class="alert alert-success text-center">{{ session('message') }}</div>
                                 @endif
 
                                 @if(session('error'))
@@ -82,9 +82,24 @@
                             <div class="card-block px-lg-7 px-4 pt-6 pb-5">
                                 <form method="post" action='/register'>
                                     @csrf
-                                    <div class="form-group mb-2"><input class="form-control rounded" type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}"></div>
-                                    <div class="form-group mb-2"><input class="form-control rounded" type="password" id="password" name="password" placeholder="Mot de passe" value="{{ old('password') }}"></div>
-                                    <div class="form-group mb-3"><input class="form-control rounded" type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirmez votre mot de passe" value="{{ old('password_confirmation') }}"></div>
+                                    <div class="form-group mb-2">
+                                        <input class="form-control rounded" type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                                        @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <input class="form-control rounded" type="password" id="password" name="password" placeholder="Mot de passe" value="{{ old('password') }}">
+                                        @error('password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input class="form-control rounded" type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirmez votre mot de passe" value="{{ old('password_confirmation') }}">
+                                        @error('password_confirmation')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                     <div class="form-check mb-4">
                                         <label class="form-check-label text-muted">
                                             <input class="form-check-input mr-2" type="checkbox" value="">
