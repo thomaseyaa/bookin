@@ -15,7 +15,7 @@
             <div class="col-lg-8 col-md-12 col-sm-12 pt-12 pb-12" id="text">
                 <h1 class="display-4">{{ session('user')->email }}</h1>
                 <p class="lead">Utilisateurs</p>
-                <a href="/adminUserForm">Ajouter un utilisateur</a>
+                <a href="/adminAddUserForm">Ajouter un utilisateur</a>
                 <table class="table table-bordered">
                     <thead>
                     <tr>

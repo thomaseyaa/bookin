@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 // Home
 Route::get('/', function () {
     return view('home');
@@ -48,13 +49,17 @@ Route::post('/updatePassword','App\Http\Controllers\UserController@updatePasswor
 // Admin Controller
 Route::get('/admin','App\Http\Controllers\AdminController@admin');
 Route::get('/usersList','App\Http\Controllers\AdminController@usersList');
-Route::get('/adminUserForm', 'App\Http\Controllers\AdminController@adminUserForm');
+Route::get('/adminAddUserForm', 'App\Http\Controllers\AdminController@adminAddUserForm');
+Route::post('/adminAddUser', 'App\Http\Controllers\AdminController@adminAddUser');
+Route::get('/adminUserForm/{id}', 'App\Http\Controllers\AdminController@adminUserForm');
 Route::post('/adminUpdateUser/{id}','App\Http\Controllers\AdminController@adminUpdateUser');
 Route::get('/adminDeleteUser/{id}','App\Http\Controllers\AdminController@adminDeleteUser');
+
 
 // Contact Controller
 Route::get('/contact','App\Http\Controllers\ContactController@contact');
 Route::post('/sendMessage','App\Http\Controllers\ContactController@sendMessage');
+
 
 // Autre
 Route::get('/news', function () {

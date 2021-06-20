@@ -39,9 +39,19 @@ class AdminController extends Controller
             return redirect('403');
         }
 
-        dd($id);
         $user = DB::table('users')->where('id', $id)->first();
         return view('admin.adminUserForm')->with('user', $user);
+    }
+
+    public function adminAddUserForm(){
+        if (session('user') == null){
+            return view('auth');
+        }
+        if (!session('user')->is_admin){
+            return redirect('403');
+        }
+
+        return view('admin.adminUserForm');
     }
 
     public function adminAddUser(Request $request){

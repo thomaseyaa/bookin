@@ -10,11 +10,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-content">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/home">Gérer les utilisateurs</a></li>
-                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/news">Gérer les catégories</a></li>
-                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/contact">Gérer les produits</a></li>
-                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/contact">Voir en tant qu'utilisateur</a></li>
-                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/enter">Deconnexion</a></li>
+                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/profile">Profil</a></li>
+                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/usersList">Utilisateurs</a></li>
+                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/news">Actualités</a></li>
+                    <li class="nav-item mx-1"><a class="nav-link text-dark" href="/logout">Deconnexion</a></li>
                 </ul>
             </div>
         </div>

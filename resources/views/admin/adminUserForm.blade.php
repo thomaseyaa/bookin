@@ -13,10 +13,10 @@
                 </ul>
             </div>
             <div class="col-lg-8 col-md-12 col-sm-12 pt-12 pb-12">
-                <h1 class="display-4">Modifier les informations de l'utilisateur</h1>
-                <div class="container mt-5">
-                    <div class="row">
-                        @if(isset($user))
+                @if(isset($user))
+                    <h1 class="display-4">Modifier les informations de l'utilisateur</h1>
+                    <div class="container mt-5">
+                        <div class="row">
                             <form method="post" action="/adminUpdateUser/{{$user->id}}">
                                 @csrf
                                 <div class="form-row">
@@ -47,7 +47,12 @@
                                 </div>
                                 <button class="btn btn-primary mb-4 w-100" type="submit">Enregistrer</button>
                             </form>
-                        @else
+                        </div>
+                    </div>
+                @else
+                    <h1 class="display-4">Ajouter un utilisateur</h1>
+                    <div class="container mt-5">
+                        <div class="row">
                             <form method="post" action='/adminAddUser'>
                                 @csrf
                                 <div class="form-row">
@@ -76,11 +81,11 @@
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <button class="btn btn-primary mb-4 w-100" type="submit">Enregistrer</button>
+                                <button class="btn btn-primary mb-4 w-100" type="submit">Ajouter</button>
                             </form>
-                        @endif
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>
