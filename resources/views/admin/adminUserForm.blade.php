@@ -21,26 +21,26 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group mb-5 col-lg-6 col-md-12 col-sm-12 pr-2">
-                                        <input class="form-control rounded" type="text" name="firstname" value="{{ $user->firstname }}">
+                                        <input class="form-control rounded" type="text" name="firstname" value="{{ $user->firstname }}" placeholder="Prénom">
                                         @error('firstname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-5 col-lg-6 col-md-12 col-sm-12 pl-2">
-                                        <input class="form-control rounded" type="text" name="lastname" value="{{ $user->lastname }}">
+                                        <input class="form-control rounded" type="text" name="lastname" value="{{ $user->lastname }}" placeholder="Nom">
                                         @error('lastname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="form-group mb-5">
-                                    <input class="form-control rounded" type="email" name="email" value="{{ $user->email }}">
+                                    <input class="form-control rounded" type="email" name="email" value="{{ $user->email }}" placeholder="Email">
                                     @error('email')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5">
-                                    <input class="form-control rounded" type="password" name="password" value="">
+                                    <input class="form-control rounded" type="password" name="password" value="" placeholder="Mot de passe">
                                     @error('password')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -57,26 +57,26 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group mb-5 col-lg-6 col-md-12 col-sm-12 pr-2">
-                                        <input class="form-control rounded" type="text" name="firstname">
+                                        <input class="form-control rounded" type="text" name="firstname" placeholder="Prénom">
                                         @error('firstname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-5 col-lg-6 col-md-12 col-sm-12 pl-2">
-                                        <input class="form-control rounded" type="text" name="lastname">
+                                        <input class="form-control rounded" type="text" name="lastname" placeholder="Nom">
                                         @error('lastname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="form-group mb-5">
-                                    <input class="form-control rounded" type="email" name="email">
+                                    <input class="form-control rounded" type="email" name="email" placeholder="Email">
                                     @error('email')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5">
-                                    <input class="form-control rounded" type="password" name="password" value="">
+                                    <input class="form-control rounded" type="password" name="password" value="" placeholder="Mot de passe">
                                     @error('password')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror

@@ -20,20 +20,20 @@
                             @csrf
                             <div class="form-row">
                                 <div class="form-group mb-5 col-lg-6 col-md-12 col-sm-12 pr-2">
-                                    <input class="form-control rounded" type="text" name="firstname" value="@if(old('firstname')){{ old('firstname') }}@else{{ session('user')->firstname }}@endif">
+                                    <input class="form-control rounded" type="text" name="firstname" value="@if(old('firstname')){{ old('firstname') }}@else{{ session('user')->firstname }}@endif" placeholder="Prénom">
                                     @error('firstname')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5 col-lg-6 col-md-12 col-sm-12 pl-2">
-                                    <input class="form-control rounded" type="text" name="lastname" value="@if(old('lastname')){{ old('lastname') }}@else{{ session('user')->lastname }}@endif">
+                                    <input class="form-control rounded" type="text" name="lastname" value="@if(old('lastname')){{ old('lastname') }}@else{{ session('user')->lastname }}@endif" placeholder="Nom">
                                     @error('lastname')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
                             <div class="form-group mb-5">
-                                <input class="form-control rounded" type="email" name="email" value="@if(old('email')){{ old('email') }}@else{{ session('user')->email }}@endif">
+                                <input class="form-control rounded" type="email" name="email" value="@if(old('email')){{ old('email') }}@else{{ session('user')->email }}@endif" placeholder="Email">
                                 @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror

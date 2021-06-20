@@ -19,7 +19,7 @@
                         <form method="post" action='/updatePassword'>
                             @csrf
                             <div class="form-group mb-5">
-                                <input class="form-control rounded" type="password" name="password" value="">
+                                <input class="form-control rounded" type="password" name="password" value="" placeholder="Mot de passe">
                                 @error('password')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
