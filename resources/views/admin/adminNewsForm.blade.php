@@ -13,26 +13,26 @@
                 </ul>
             </div>
             <div class="col-lg-8 col-md-12 col-sm-12 pt-12 pb-12">
-                @if(isset($new))
-                    <h1 class="display-4">Modifier l'article {{$new->id}}</h1>
+                @if(isset($news))
+                    <h1 class="display-4">Modifier l'article {{$news->id}}</h1>
                     <div class="container mt-5">
                         <div class="row">
-                            <form method="post" action="/adminUpdateNew/{{$new->id}}">
+                            <form method="post" action="/adminUpdateNews/{{$news->id}}">
                                 @csrf
                                 <div class="form-group mb-5">
-                                    <input class="form-control rounded" type="text" name="title" value="{{ $new->title }}" placeholder="Titre">
+                                    <input class="form-control rounded" type="text" name="title" value="{{ $news->title }}" placeholder="Titre">
                                     @error('title')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5">
-                                    <input class="form-control rounded" type="text" name="description" value="{{ $new->description }}" placeholder="Description">
+                                    <input class="form-control rounded" type="text" name="description" value="{{ $news->description }}" placeholder="Description">
                                     @error('description')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5">
-                                    <textarea class="form-control rounded" rows="6" name="body" value="{{ $new->body }}" placeholder="Text"></textarea>
+                                    <textarea class="form-control rounded" type="text" rows="6" name="body" value="{{ $news->body }}" placeholder="Text"></textarea>
                                     @error('body')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -51,7 +51,7 @@
                     <h1 class="display-4">Créer un article</h1>
                     <div class="container mt-5">
                         <div class="row">
-                            <form method="post" action='/adminAddNew'>
+                            <form method="post" action='/adminAddNews'>
                                 @csrf
                                 <div class="form-group mb-5">
                                     <input class="form-control rounded" type="text" name="title" placeholder="Titre">

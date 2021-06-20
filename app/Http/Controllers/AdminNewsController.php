@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AddNewRequest;
-use App\Models\Artcile;
+use App\Http\Requests\NewRequest;
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +22,7 @@ class AdminNewsController extends Controller
         return view('admin.newsList')->with('allNews', $allNews);
     }
 
-    public function adminAddNewForm(){
+    public function adminAddNewsForm(){
 
         if (session('user') == null){
             return view('auth');
@@ -31,10 +31,10 @@ class AdminNewsController extends Controller
             return redirect('403');
         }
 
-        return view('admin.adminNewForm');
+        return view('admin.adminNewsForm');
     }
 
-    public function adminAddNew(AddNewRequest $request){
+    public function adminAddNews(NewRequest $request){
 
         if (session('user') == null){
             return view('auth');
@@ -43,17 +43,17 @@ class AdminNewsController extends Controller
             return redirect('403');
         }
 
-        DB::table('news')->insert([
+        News::insert([
             'title' => $request->title,
             'description' => $request->description,
             'body' => $request->body,
-            'published' => $request->published,
+            'published' => $request->published == 'true' ? true : false,
         ]);
 
         return redirect('newsList');
     }
 
-    public function adminUpdateNewForm($id){
+    public function adminUpdateNewsForm($id){
 
         if (session('user') == null){
             return view('auth');
@@ -62,11 +62,11 @@ class AdminNewsController extends Controller
             return redirect('403');
         }
 
-        $new = DB::table('news')->where('id', $id)->first();
-        return view('admin.adminNewForm')->with('new', $new);
+        $news = News::where('id', $id)->first();
+        return view('admin.adminNewsForm')->with('news', $news);
     }
 
-    public function adminDeleteNew($id){
+    public function adminUpdateNews(NewRequest $request, $id){
 
         if (session('user') == null){
             return view('auth');
@@ -75,7 +75,26 @@ class AdminNewsController extends Controller
             return redirect('403');
         }
 
-        DB::table('news')->where('id', $id)->delete();
+        News::where('id', $id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'body' => $request->body,
+            'published' => $request->published == 'true' ? true : false,
+        ]);
+
+        return redirect('newsList');
+    }
+
+    public function adminDeleteNews($id){
+
+        if (session('user') == null){
+            return view('auth');
+        }
+        if (!session('user')->is_admin){
+            return redirect('403');
+        }
+
+        News::where('id', $id)->delete();
         return redirect('newsList');
     }
 }

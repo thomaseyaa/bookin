@@ -47,18 +47,18 @@ Route::post('/updatePassword','App\Http\Controllers\ProfileController@updatePass
 Route::get('/usersList','App\Http\Controllers\AdminUsersController@usersList');
 Route::get('/adminAddUserForm', 'App\Http\Controllers\AdminUsersController@adminAddUserForm');
 Route::post('/adminAddUser', 'App\Http\Controllers\AdminUsersController@adminAddUser');
-Route::get('/adminUserForm/{id}', 'App\Http\Controllers\AdminUsersController@adminUserForm');
+Route::get('/adminUpdateUserForm/{id}', 'App\Http\Controllers\AdminUsersController@adminUpdateUserForm');
 Route::post('/adminUpdateUser/{id}','App\Http\Controllers\AdminUsersController@adminUpdateUser');
 Route::get('/adminDeleteUser/{id}','App\Http\Controllers\AdminUsersController@adminDeleteUser');
 
 
 // Admin News Controller
 Route::get('/newsList','App\Http\Controllers\AdminNewsController@newsList');
-Route::get('/adminAddUserForm', 'App\Http\Controllers\AdminNewsController@adminAddNewForm');
-Route::post('/adminAddNew', 'App\Http\Controllers\AdminNewsController@adminAddNew');
-Route::get('/adminUpdateNewForm/{id}', 'App\Http\Controllers\AdminNewsController@adminUpdateNewForm');
-Route::post('/adminUpdateNew/{id}','App\Http\Controllers\AdminNewsController@adminUpdateNew');
-Route::get('/adminDeleteNew/{id}','App\Http\Controllers\AdminNewsController@adminDeleteNew');
+Route::get('/adminAddNewsForm', 'App\Http\Controllers\AdminNewsController@adminAddNewsForm');
+Route::post('/adminAddNews', 'App\Http\Controllers\AdminNewsController@adminAddNews');
+Route::get('/adminUpdateNewsForm/{id}', 'App\Http\Controllers\AdminNewsController@adminUpdateNewsForm');
+Route::post('/adminUpdateNews/{id}','App\Http\Controllers\AdminNewsController@adminUpdateNews');
+Route::get('/adminDeleteNews/{id}','App\Http\Controllers\AdminNewsController@adminDeleteNews');
 
 
 // Contact Controller

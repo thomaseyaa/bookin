@@ -15,7 +15,9 @@
             <div class="col-lg-8 col-md-12 col-sm-12 pt-12 pb-12" id="text">
                 <h1 class="display-4">{{ session('user')->email }}</h1>
                 <p class="lead">Utilisateurs</p>
-                <a href="/adminAddUserForm">Ajouter un utilisateur</a>
+                <div class="mb-3">
+                    <a href="/adminAddUserForm">Ajouter un utilisateur</a>
+                </div>
                 <table class="table table-bordered">
                     <thead>
                     <tr>
@@ -36,7 +38,7 @@
                             <td>@if($user->is_admin==0) Utilisateur @else Administrateur @endif</td>
                             <td>{{ $user->created_at }}</td>
                             <td>
-                                <a href="/adminUserForm/{{$user->id}}">Modifier</a>
+                                <a href="/adminUpdateUserForm/{{$user->id}}">Modifier</a>
                                 <a class="text-danger" href="/adminDeleteUser/{{$user->id}}">Supprimer</a>
                             </td>
                         </tr>

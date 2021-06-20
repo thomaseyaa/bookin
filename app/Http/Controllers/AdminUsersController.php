@@ -62,7 +62,7 @@ class AdminUsersController extends Controller
         return redirect('usersList');
     }
 
-    public function adminUserForm($id){
+    public function adminUpdateUserForm($id){
 
         if (session('user') == null){
             return view('auth');

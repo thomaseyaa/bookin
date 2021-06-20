@@ -15,7 +15,9 @@
             <div class="col-lg-8 col-md-12 col-sm-12 pt-12 pb-12" id="text">
                 <h1 class="display-4">{{ session('user')->email }}</h1>
                 <p class="lead">Articles</p>
-                <a href="/adminAddUserForm">Ajouter un article</a>
+                <div class="mb-3">
+                    <a href="/adminAddNewsForm">Ajouter un article</a>
+                </div>
                 <table class="table table-bordered">
                     <thead>
                     <tr>
@@ -23,20 +25,21 @@
                         <th>Déscription</th>
                         <th>Article</th>
                         <th>Statut</th>
+                        <th>Date</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($allNews as $new)
+                    @foreach($allNews as $news)
                         <tr>
-                            <td>{{ $new->title }}</td>
-                            <td>{{ $new->description }}</td>
-                            <td>{{ $new->body }}</td>
-                            <td>@if($new->published==0) Non publié @else Publié @endif</td>
-                            <td>{{ $new->published_at }}</td>
+                            <td>{{ $news->title }}</td>
+                            <td>{{ $news->description }}</td>
+                            <td>{{ $news->body }}</td>
+                            <td>@if($news->published==0) Non publié @else Publié @endif</td>
+                            <td>@if(isset($news->updated_at))Modifié le {{ $news->updated_at }}@else Crée le {{ $news->created_at }}@endif</td>
                             <td>
-                                <a href="/adminUpdateNewForm/{{$new->id}}">Modifier</a>
-                                <a class="text-danger" href="/adminDeleteNew/{{$new->id}}">Supprimer</a>
+                                <a href="/adminUpdateNewsForm/{{$news->id}}">Modifier</a>
+                                <a class="text-danger" href="/adminDeleteNews/{{$news->id}}">Supprimer</a>
                             </td>
                         </tr>
                     @endforeach
