@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -15,12 +16,7 @@ class AuthController extends Controller
         return view('auth');
     }
 
-    public function login(){
-        request()->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
+    public function login(LoginRequest $request){
         $result = DB::selectOne('select * from users where email = :email', ['email' => $_POST['email']]);
 
         if ($result == null){
@@ -52,9 +48,6 @@ class AuthController extends Controller
         else{
             return redirect('/auth')->with('error', "Quelque chose ne fonctionne pas ")->withInput();
         }
-
-        session()->flash('status', 'success');
-        session()->flash('message', "Inscription réussie, vous pouvez vous connectez !");
 
         return redirect('/auth')->with('success', "Inscription réussie, vous pouvez vous connectez !");
     }
