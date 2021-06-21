@@ -21,7 +21,7 @@
                                     <input class="form-control rounded mx-0 mr-2" type="text" placeholder="Email">
                                     <button class="btn btn-primary text-white" type="button">Envoyer</button>
                                 </div>
-                                <a class="text-muted" href="/enter">
+                                <a class="text-muted" href="/auth">
                                     <i class="fas fa-caret-square-left mr-2"></i>
                                     Se connecter
                                 </a>

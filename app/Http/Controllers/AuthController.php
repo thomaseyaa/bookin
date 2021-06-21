@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function auth(){
+
         if (!session('user') == null){
             return redirect('profile');
         }
@@ -17,6 +18,7 @@ class AuthController extends Controller
     }
 
     public function login(LoginRequest $request){
+
         $result = DB::selectOne('select * from users where email = :email', ['email' => $_POST['email']]);
 
         if ($result == null){
@@ -38,6 +40,7 @@ class AuthController extends Controller
     }
 
     public function register(RegisterRequest $request){
+
         $_POST['password'] = Hash::make($_POST['password']);
 
         $result = DB::insert('insert into users (email, password) values (?, ?)', [$_POST['email'], $_POST['password']]);
@@ -55,6 +58,7 @@ class AuthController extends Controller
     }
 
     public function logout(){
+
         if (!session('user') == null){
             session(['user' => null]);
             return redirect('/home');
@@ -62,5 +66,13 @@ class AuthController extends Controller
         else{
             return redirect('/profile');
         }
+    }
+
+    public function passwordRecovery(){
+
+        if (!session('user') == null){
+            return redirect('profile');
+        }
+        return view('auth');
     }
 }

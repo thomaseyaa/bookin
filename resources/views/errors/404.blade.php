@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="text-center">
-            <p class="lead mb-5 mr-5">La page que vous recherchez est introuvable.</p>
+            <p class="lead mb-5">La page que vous recherchez est introuvable.</p>
             <a href="/">
                 <button class="btn btn-primary text-white px-5 mr-1" type="button">Retourner à la page d'accueil</button>
             </a>

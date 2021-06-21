@@ -32,6 +32,7 @@
                                 @if(session('error'))
                                     <div class="alert alert-danger text-center ">{{ session('error') }}</div>
                                 @endif
+
                                 <form method="post" action='/login'>
                                     @csrf
                                     <div class="form-group mb-2">
@@ -71,7 +72,7 @@
                                         </div>
                                     </div>
 
-                                    <a class="text-muted small" href="/password-recovery">
+                                    <a class="text-muted small" href="/passwordRecovery">
                                         <i class="fas fa-question-circle mr-2"></i>
                                         Mot de passe oublié
                                     </a>
@@ -80,6 +81,14 @@
                         </div>
                         <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
                             <div class="card-block px-lg-7 px-4 pt-6 pb-5">
+                                @if(session('status'))
+                                    <div class="alert alert-success text-center">{{ session('message') }}</div>
+                                @endif
+
+                                @if(session('error'))
+                                    <div class="alert alert-danger text-center ">{{ session('error') }}</div>
+                                @endif
+
                                 <form method="post" action='/register'>
                                     @csrf
                                     <div class="form-group mb-2">
