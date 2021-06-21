@@ -57,20 +57,20 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group mb-5 col-lg-6 col-md-12 col-sm-12 pr-2">
-                                        <input class="form-control rounded" type="text" name="firstname" placeholder="Prénom">
+                                        <input class="form-control rounded" type="text" name="firstname" value="{{ old('firstname') }}" placeholder="Prénom">
                                         @error('firstname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-5 col-lg-6 col-md-12 col-sm-12 pl-2">
-                                        <input class="form-control rounded" type="text" name="lastname" placeholder="Nom">
+                                        <input class="form-control rounded" type="text" name="lastname" value="{{ old('lastname') }}" placeholder="Nom">
                                         @error('lastname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="form-group mb-5">
-                                    <input class="form-control rounded" type="email" name="email" placeholder="Email">
+                                    <input class="form-control rounded" type="email" name="email" value="{{ old('email') }}" placeholder="Email">
                                     @error('email')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror

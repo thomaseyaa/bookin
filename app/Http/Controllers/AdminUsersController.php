@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +36,7 @@ class AdminUsersController extends Controller
         return view('admin.adminUserForm');
     }
 
-    public function adminAddUser(Request $request){
+    public function adminAddUser(AddUserRequest $request){
 
         if (session('user') == null){
             return view('auth');
@@ -43,16 +45,9 @@ class AdminUsersController extends Controller
             return redirect('403');
         }
 
-        $request->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'email' => 'required|unique:users',
-            'password' => 'required',
-        ]);
-
         $password = Hash::make($request->password);
 
-        DB::table('users')->insert([
+        User::insert([
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
             'email' => $request->email,
@@ -75,7 +70,7 @@ class AdminUsersController extends Controller
         return view('admin.adminUserForm')->with('user', $user);
     }
 
-    public function adminUpdateUser(Request $request, $id){
+    public function adminUpdateUser(UpdateUserRequest $request, $id){
 
         if (session('user') == null){
             return view('auth');
@@ -83,12 +78,6 @@ class AdminUsersController extends Controller
         if (!session('user')->is_admin){
             return redirect('403');
         }
-
-        $request->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'email' => 'required',
-        ]);
 
         if($request->password == null){
             User::where('id', $id)->update([

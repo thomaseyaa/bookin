@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\NewRequest;
+use App\Http\Requests\NewsRequest;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +34,7 @@ class AdminNewsController extends Controller
         return view('admin.adminNewsForm');
     }
 
-    public function adminAddNews(NewRequest $request){
+    public function adminAddNews(NewsRequest $request){
 
         if (session('user') == null){
             return view('auth');
@@ -66,7 +66,7 @@ class AdminNewsController extends Controller
         return view('admin.adminNewsForm')->with('news', $news);
     }
 
-    public function adminUpdateNews(NewRequest $request, $id){
+    public function adminUpdateNews(NewsRequest $request, $id){
 
         if (session('user') == null){
             return view('auth');
