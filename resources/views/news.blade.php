@@ -9,35 +9,20 @@
                     <h1 class="display-3 mt-12 mb-3">Actualités</h1>
                 </div>
             </div>
+            @if(!$allNews->isEmpty())
             <div class="row">
                 <div class="col-lg-12 mr-auto">
                     <div class="card-deck mb-5">
+                        @foreach ($allNews as $news)
                         <div class="card rounded-lg overflow-hidden">
                             <img class="card-img-top" alt="Photo" src="/images/1.jpg">
                             <div class="card-body px-5 pt-4">
-                                <div class="mt-2 mb-3 text-muted small"><i class="far fa-clock mr-2"></i>Il y'a 2 heures</div>
-                                <a class="h5 text-dark stretched-link" href="/article">Lorem ipsum dolor</a>
-                                <p class="text-muted my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel</p>
+                                <div class="mt-2 mb-3 text-muted small"><i class="far fa-clock mr-2"></i>{{ $news->created_at }}</div>
+                                <a class="h5 text-dark stretched-link" href="{{ '/article/'. $news->id }}">{{ $news->title }}</a>
+                                <p class="text-muted my-2">{{ $news->description }}</p>
                             </div>
                         </div>
-
-                        <div class="card rounded-lg overflow-hidden">
-                            <img class="card-img-top" alt="Photo" src="/images/2.jpg">
-                            <div class="card-body px-5 pt-4">
-                                <div class="mt-2 mb-3 text-muted small"><i class="far fa-clock mr-2"></i>Il y'a 2 heures</div>
-                                <a class="h5 text-dark stretched-link" href="/article">Lorem ipsum dolor</a>
-                                <p class="text-muted my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel</p>
-                            </div>
-                        </div>
-
-                        <div class="card rounded-lg overflow-hidden">
-                            <img class="card-img-top" alt="Photo" src="/images/3.jpg">
-                            <div class="card-body px-5 pt-4">
-                                <div class="mt-2 mb-3 text-muted small"><i class="far fa-clock mr-2"></i>Il y'a 2 heures</div>
-                                <a class="h5 text-dark stretched-link" href="/article">Lorem ipsum dolor</a>
-                                <p class="text-muted my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
                     <div class="card-deck mb-5">
@@ -83,6 +68,11 @@
                     </nav>
                 </div>
             </div>
+            @else
+                <div class="text-center">
+                    <p class="lead text-secondary">Aucun article pour le moment</p>
+                </div>
+            @endif
         </div>
     </div>
 @endsection

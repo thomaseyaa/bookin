@@ -70,13 +70,12 @@ Route::post('/checkout/{id}','App\Http\Controllers\CheckoutController@payment');
 Route::get('/payment/success','App\Http\Controllers\CheckoutController@paymentSuccess');
 Route::get('/payment/error','App\Http\Controllers\CheckoutController@paymentError');
 
+// News Controller
+Route::get('/news','App\Http\Controllers\NewsController@showNews');
+Route::get('/article/{id}', 'App\Http\Controllers\NewsController@showOneNews');
+
+
 // Autre
-Route::get('/news', function () {
-    return view('news');
-});
-Route::get('/article', function () {
-    return view('article');
-});
 Route::get('/about', function () {
     return view('about');
 });
