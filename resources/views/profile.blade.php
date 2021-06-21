@@ -9,7 +9,7 @@
                     <li class="mb-3"><span class="initialism">Compte</span></li>
                     <li class="mb-2"><a class="btn-link" href="/profileForm">Modifier mes informations</a></li>
                     <li class="mb-2"><a class="btn-link" href="/passwordForm">Modifier mon mot de passe</a></li>
-                    <li class="mb-2"><a class="btn-link" href="#">Gérer mon abonnement</a></li>
+                    <li class="mb-2"><a class="btn-link" href="/price">Gérer mon abonnement</a></li>
                 </ul>
             </div>
             <div class="col-lg-8 col-md-12 col-sm-12 pt-12 pb-12">

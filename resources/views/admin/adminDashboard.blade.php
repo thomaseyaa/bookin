@@ -8,7 +8,7 @@
                 <ul class="mx-0 px-0 pt-12 list-unstyled">
                     <li class="mb-3"><span class="initialism">Admin</span></li>
                     <li class="mb-2"><a class="btn-link" href="/usersList">Gérer les utilisateurs</a></li>
-                    <li class="mb-2"><a class="btn-link" href="#">Gérer les abonnements</a></li>
+                    <li class="mb-2"><a class="btn-link" href="">Gérer les abonnements</a></li>
                     <li class="mb-2"><a class="btn-link" href="/newsList">Gérer les actualités</a></li>
                 </ul>
             </div>

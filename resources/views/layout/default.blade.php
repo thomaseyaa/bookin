@@ -13,7 +13,8 @@
     <!-- Libs CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="/css/aos.css" rel="stylesheet">
-
+    <!-- Stripe-->
+    <script src="https://js.stripe.com/v3/"></script>
     <!-- Google Map Script-->
     <script>
         // Initialize and add the map
@@ -50,5 +51,6 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
 <script src="/js/pace.min.js" type="module"></script>
+<script src="https://js.stripe.com/v3/"></script>
 </body>
 

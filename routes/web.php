@@ -29,9 +29,7 @@ Route::get('/auth','App\Http\Controllers\AuthController@auth');
 Route::post('/login','App\Http\Controllers\AuthController@login');
 Route::post('/register','App\Http\Controllers\AuthController@register');
 Route::get('/logout','App\Http\Controllers\AuthController@logout');
-Route::get('/passwordRecovery', function () {
-    return view('passwordRecovery');
-});
+Route::get('/passwordRecovery','App\Http\Controllers\AuthController@passwordRecovery');
 
 
 // User Controller
@@ -66,6 +64,12 @@ Route::get('/contact','App\Http\Controllers\ContactController@contact');
 Route::post('/sendMessage','App\Http\Controllers\ContactController@sendMessage');
 
 
+// Checkout Controller
+Route::get('/checkout/{id}','App\Http\Controllers\CheckoutController@checkout');
+Route::post('/checkout/{id}','App\Http\Controllers\CheckoutController@payment');
+Route::get('/payment/success','App\Http\Controllers\CheckoutController@paymentSuccess');
+Route::get('/payment/error','App\Http\Controllers\CheckoutController@paymentError');
+
 // Autre
 Route::get('/news', function () {
     return view('news');
@@ -78,6 +82,9 @@ Route::get('/about', function () {
 });
 Route::get('/price', function () {
     return view('price');
+});
+Route::get('/library', function () {
+    return view('library');
 });
 Route::get('/faq', function () {
     return view('faq');

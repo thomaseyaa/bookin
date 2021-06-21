@@ -127,7 +127,7 @@
                         </div>
                     </div>
                     <div class="card-footer bg-gray-light border-0 px-6 pb-3">
-                        <a class="btn btn-primary text-white w-100 mb-3" href="javascript:void(0)">Continuer</a>
+                        <a class="btn btn-primary text-white w-100 mb-3" href="/checkout/price_1J00C1DsSB57FjAfcyuwIefR">Continuer</a>
                     </div>
                 </div>
                 <div class="card bg-gray-light border-radius-10 mx-2">
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                     <div class="card-footer bg-gray-light border-0 px-6 pb-3">
-                        <a class="btn btn-primary w-100 mb-3" href="javascript:void(0)">Continuer</a>
+                        <a class="btn btn-primary w-100 mb-3" href="/checkout/price_1J00CtDsSB57FjAfcqgF2cno">Continuer</a>
                     </div>
                 </div>
             </div>
