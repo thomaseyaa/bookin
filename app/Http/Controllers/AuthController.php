@@ -43,13 +43,15 @@ class AuthController extends Controller
         $result = DB::insert('insert into users (email, password) values (?, ?)', [$_POST['email'], $_POST['password']]);
 
         if ($result){
-            return redirect('/auth');
+            $connect = DB::selectOne('select * from users where email = :email', ['email' => $_POST['email']]);
+            session(['user' => $connect]);
+            return redirect('/price');
         }
         else{
             return redirect('/auth')->with('error', "Quelque chose ne fonctionne pas ")->withInput();
         }
 
-        return redirect('/auth')->with('success', "Inscription réussie, vous pouvez vous connectez !");
+        return redirect('/price')->with('success', "Inscription réussie, vous pouvez vous connectez !");
     }
 
     public function logout(){
