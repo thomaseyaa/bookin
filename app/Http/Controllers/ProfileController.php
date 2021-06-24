@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -23,7 +24,7 @@ class ProfileController extends Controller
         if (session('user') == null){
             return view('auth');
         }
-        return view('profile');
+        return view('profile.profile');
     }
 
     public function profileForm(){
@@ -31,7 +32,7 @@ class ProfileController extends Controller
         if (session('user') == null){
             return redirect('home');
         }
-        return view('profileForm');
+        return view('profile.profileForm');
     }
 
     function updateUser(){
@@ -64,7 +65,7 @@ class ProfileController extends Controller
         if (session('user') == null){
             return redirect('home');
         }
-        return view('passwordForm');
+        return view('profile.passwordForm');
     }
 
     function updatePassword(){
@@ -89,5 +90,9 @@ class ProfileController extends Controller
         session()->flash('message',"Modification enregistrée");
 
         return redirect('/profile');
+    }
+
+    public function billingPortal(){
+
     }
 }

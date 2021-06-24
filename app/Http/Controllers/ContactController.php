@@ -18,6 +18,6 @@ class ContactController extends Controller
         session()->flash('status', 'success');
         session()->flash('message',"Message envoyé !");
 
-        return redirect('contact');
+        return redirect('/contact');
     }
 }

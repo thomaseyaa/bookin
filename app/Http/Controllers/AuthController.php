@@ -12,7 +12,7 @@ class AuthController extends Controller
     public function auth(){
 
         if (!session('user') == null){
-            return redirect('profile');
+            return redirect('/profile');
         }
         return view('auth');
     }
@@ -71,7 +71,7 @@ class AuthController extends Controller
     public function passwordRecovery(){
 
         if (!session('user') == null){
-            return redirect('profile');
+            return redirect('/profile');
         }
         return view('auth');
     }
