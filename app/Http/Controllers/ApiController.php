@@ -58,7 +58,6 @@ class ApiController extends Controller
         return response()->json([
             'token' => Str::random(40),
             "email" => $user->email,
-            "created_at" => $user->created_at
         ], 200);
     }
 

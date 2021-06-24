@@ -2,10 +2,10 @@
 
 use App\Models\News;
 use Carbon\Carbon;
+use Faker\Factory;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Faker\Factory;
 
 class CreateNewsTable extends Migration
 {
