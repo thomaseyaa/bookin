@@ -2,8 +2,8 @@
     <ul class="mx-0 px-0 pt-12 list-unstyled">
         <li class="mb-3"><span class="initialism">Gestion</span></li>
         <li class="mb-2"><a class="btn-link" href="/usersList">Gérer les utilisateurs</a></li>
-        <li class="mb-2"><a class="btn-link" href="">Gérer les abonnements</a></li>
         <li class="mb-2"><a class="btn-link" href="/newsList">Gérer les actualités</a></li>
+        <li class="mb-2"><a class="btn-link" href="https://dashboard.stripe.com/test/payments" target="_blank">Gérer les abonnements</a></li>
         <br>
         <li class="mb-3"><span class="initialism">Compte</span></li>
         <li class="mb-2"><a class="btn-link" href="/profileForm">Modifier mes informations</a></li>

@@ -9,9 +9,9 @@
             </div>
         </div>
         <div class="text-center">
-            <p class="lead mb-5">Aucun livre n'est disponible pour le moment</p>
+            <p class="lead mb-5">Aucun livre n'est disponible pour le moment.</p>
             <a href="/">
-                <button class="btn btn-primary text-white px-5 mr-1" type="button">Retourner à la page d'accueil</button>
+                <button class="btn btn-primary text-white px-5" type="button">Retourner à la page d'accueil</button>
             </a>
         </div>
     </div>

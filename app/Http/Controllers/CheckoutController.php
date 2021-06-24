@@ -9,16 +9,31 @@ use Laravel\Cashier\Cashier;
 
 class CheckoutController extends Controller
 {
-    public function checkout(Request $request){
+    public function checkout($id){
 
         if (session('user') == null){
             return redirect('auth')->with('error', "Connectez ou inscrivez-vous d'abord !");
         }
+
+        if ($id == 'price_1J00C1DsSB57FjAfcyuwIefR'){
+            $plan = [
+                'name' => 'Basic',
+                'price' => '7,99',
+            ];
+        }
+        else{
+            $plan = [
+                'name' => 'Pro',
+                'price' => '17,99',
+            ];
+
+        }
+
         $user = User::find(session('user')->id);
         $intent = $user->createSetupIntent();
         $stripeKey = env('STRIPE_KEY');
 
-        return view('payment.checkout', compact('intent', 'stripeKey'));
+        return view('payment.checkout', compact('intent', 'stripeKey'))->with('plan', $plan);;
     }
 
     public function payment(PlanRequest $request){

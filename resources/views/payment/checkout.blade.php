@@ -11,7 +11,7 @@
                             <div class="row d-flex justify-content-center">
                                 <div class="col pt-4 mb-2">
                                     <h5>Payement</h5>
-                                    <p>Abonnement mensuel : 7,99€</p>
+                                    <p class="text-primary">Abonnement {{ $plan['name'] }} : {{ $plan['price'] }}€</p>
                                 </div>
                             </div>
                         </div>

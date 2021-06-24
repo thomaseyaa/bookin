@@ -11,7 +11,7 @@
         <div class="text-center">
             <p class="lead text-secondary mb-5">Vous n'êtes pas autorisé à accéder à cette page</p>
             <a href="/">
-                <button class="btn btn-primary text-white px-5 mr-1" type="button">Retourner à la page d'accueil</button>
+                <button class="btn btn-primary text-white px-5" type="button">Retourner à la page d'accueil</button>
             </a>
         </div>
     </div>
