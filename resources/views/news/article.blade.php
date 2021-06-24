@@ -13,9 +13,8 @@
                     <h1 class="display-4 mt-4 mb-3">{{ $news->title }}</h1>
                     <p class="lead mb-4 text-muted">{{ $news->description }}</p>
                     <div class="my-5 text-center">
-                        <img class="w-100 rounded mb-3" alt="Photo" src="/images/1.jpg">
+                        <img class="w-100 rounded mb-3" src="{{ asset($news->img_url) }}" alt="{{ $news->title }}">
                     </div>
-                    <p class="mb-5">Lorem ipsum dolor sit amet cons lectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae labo placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae labo.</p>
                     <p>{{ $news->body }}</p>
                 </div>
             </div>

@@ -20,6 +20,8 @@ class CreateNewsTable extends Migration
             $table->string('description');
             $table->longText('body');
             $table->boolean('published');
+            $table->string('img_url');
+            $table->string('img_id');
             $table->timestamp('created_at')->default(Carbon::now());
             $table->timestamp('updated_at')->default(Carbon::now());
         });

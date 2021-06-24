@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-
 Route::get('/home', function () {
     return view('home');
 });
@@ -39,6 +38,7 @@ Route::get('/profileForm','App\Http\Controllers\ProfileController@profileForm');
 Route::post('/updateUser','App\Http\Controllers\ProfileController@updateUser');
 Route::get('/passwordForm','App\Http\Controllers\ProfileController@passwordForm');
 Route::post('/updatePassword','App\Http\Controllers\ProfileController@updatePassword');
+Route::get('/billingPortal','App\Http\Controllers\ProfileController@billingPortal');
 
 
 // Admin Users Controller
@@ -70,20 +70,22 @@ Route::post('/checkout/{id}','App\Http\Controllers\CheckoutController@payment');
 Route::get('/payment/success','App\Http\Controllers\CheckoutController@paymentSuccess');
 Route::get('/payment/error','App\Http\Controllers\CheckoutController@paymentError');
 
+
 // News Controller
 Route::get('/news','App\Http\Controllers\NewsController@showNews');
 Route::get('/article/{id}', 'App\Http\Controllers\NewsController@showOneNews');
+Route::post('/searchNews', 'App\Http\Controllers\NewsController@searchNews');
 
 
 // Autre
+Route::get('/library', function () {
+    return view('library');
+});
 Route::get('/about', function () {
     return view('about');
 });
 Route::get('/price', function () {
     return view('price');
-});
-Route::get('/library', function () {
-    return view('library');
 });
 Route::get('/faq', function () {
     return view('faq');

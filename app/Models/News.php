@@ -13,6 +13,8 @@ class News extends Model
         'title',
         'description',
         'body',
+        'img_url',
+        'img_id',
         'published',
     ];
 }

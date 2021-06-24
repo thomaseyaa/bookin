@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsRequest;
 use App\Models\News;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,10 +44,14 @@ class AdminNewsController extends Controller
             return redirect('403');
         }
 
+        $result = $request->img->storeOnCloudinary();
+
         News::insert([
             'title' => $request->title,
             'description' => $request->description,
             'body' => $request->body,
+            'img_url' => $result->getSecurePath(),
+            'img_id' => $result->getPublicId(),
             'published' => $request->published == 'true' ? true : false,
         ]);
 
@@ -75,10 +80,14 @@ class AdminNewsController extends Controller
             return redirect('403');
         }
 
+        $result = $request->img->storeOnCloudinary();
+
         News::where('id', $id)->update([
             'title' => $request->title,
             'description' => $request->description,
             'body' => $request->body,
+            'img_url' => $result->getSecurePath(),
+            'img_id' => $result->getPublicId(),
             'published' => $request->published == 'true' ? true : false,
         ]);
 
@@ -93,6 +102,9 @@ class AdminNewsController extends Controller
         if (!session('user')->is_admin){
             return redirect('403');
         }
+
+        $news = News::where('id', $id)->get();
+        $result = cloudinary()->destroy($news[0]->img_id);
 
         News::where('id', $id)->delete();
         return redirect('newsList');

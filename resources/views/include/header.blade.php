@@ -9,20 +9,24 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar-content">
-                <form class="form-inline my-2 my-lg-0 ml-auto" type="submit">
-                    <input class="form-control rounded-pill bg-white" type="search" placeholder="Recherche" aria-label="Recherche">
+                <form method="post" action='/searchNews' class="form-inline my-2 my-lg-0 ml-auto" type="submit">
+                    @csrf
+                    <input class="form-control rounded-pill bg-white" type="search" name="searchBar" placeholder="Recherche" aria-label="Recherche">
                 </form>
                 <ul class="navbar-nav">
-                    @if(session('user') != null)
+                    @if(session('user') != null && session('user')->is_admin == 0)
                         <li class="nav-item mx-1"><a class="nav-link text-dark" href="/profile">Profil</a></li>
-                    @else
-                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/home">Accueil</a></li>
-                    @endif
                         <li class="nav-item mx-1"><a class="nav-link text-dark" href="/news">Actualités</a></li>
                         <li class="nav-item mx-1"><a class="nav-link text-dark" href="/contact">Contact</a></li>
-                    @if(session('user') != null)
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/logout">Déconnexion</a></li>
+                   @elseif(session('user') != null && session('user')->is_admin == 1)
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/admin">Tableau de bord</a></li>
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/news">Actualités</a></li>
                         <li class="nav-item mx-1"><a class="nav-link text-dark" href="/logout">Déconnexion</a></li>
                     @else
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/home">Accueil</a></li>
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/news">Actualités</a></li>
+                        <li class="nav-item mx-1"><a class="nav-link text-dark" href="/contact">Contact</a></li>
                         <li class="nav-item mx-1"><a class="nav-link text-dark" href="/auth">Connexion/Inscription</a></li>
                     @endif
                 </ul>

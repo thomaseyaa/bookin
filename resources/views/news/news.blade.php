@@ -15,7 +15,7 @@
                     <div class="card-deck mb-5">
                         @foreach ($allNews as $news)
                         <div class="card rounded-lg overflow-hidden">
-                            <img class="card-img-top" alt="Photo" src="/images/1.jpg">
+                            <img class="card-img-top" src="{{ asset($news->img_url) }}" alt="{{ $news->title }}">
                             <div class="card-body px-5 pt-4">
                                 <div class="mt-2 mb-3 text-muted small"><i class="far fa-clock mr-2"></i>{{ $news->created_at }}</div>
                                 <a class="h5 text-dark stretched-link" href="{{ '/article/'. $news->id }}">{{ $news->title }}</a>
@@ -68,11 +68,11 @@
                     </nav>
                 </div>
             </div>
-            @else
-                <div class="text-center">
-                    <p class="lead text-secondary">Aucun article pour le moment</p>
-                </div>
-            @endif
         </div>
+        @else
+            <div class="text-center">
+                <p class="lead pb-8 text-danger">Aucun résultat ne correspond à votre recherche.</p>
+            </div>
+        @endif
     </div>
 @endsection
