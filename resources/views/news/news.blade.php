@@ -3,7 +3,7 @@
 @section('content')
     <!-- NEWS-->
     <div class="bg-light">
-        <div class="container" >
+        <div class="container">
             <div class="row">
                 <div class="col text-center pt-8 pb-6">
                     <h1 class="display-3 mt-12 mb-3">Actualités</h1>
@@ -70,8 +70,11 @@
             </div>
         </div>
         @else
-            <div class="text-center">
-                <p class="lead pb-8 text-danger">Aucun résultat ne correspond à votre recherche.</p>
+            <div class="text-center pb-15">
+                <p class="lead mb-5">Aucun résultat ne correspond à votre recherche.</p>
+                <a href="/">
+                    <button class="btn btn-primary text-white px-5" type="button">Retourner à la page d'accueil</button>
+                </a>
             </div>
         @endif
     </div>
