@@ -88,7 +88,7 @@ class ApiController extends Controller
         $allNews = DB::table('news')->where('published', 1)->get();
         return response()->json([
             'success' => true,
-            $allNews
+            'allNews' => $allNews
         ], 200);
     }
 
@@ -98,7 +98,7 @@ class ApiController extends Controller
         $news = DB::table('news')->where('id', $id)->first();
         return response()->json([
             'success' => true,
-            $news
+            'news' => $news
         ], 200);
     }
 
