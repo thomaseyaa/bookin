@@ -23,7 +23,7 @@ class NewsController extends Controller
     public function searchNews(Request $request){
 
         $result = $request->input('searchBar');
-        $allNews = News::where('title', 'LIKE', "%{$result}%")->orWhere('body', 'LIKE', "%{$result}%")->paginate(2);
+        $allNews = News::where('title', 'LIKE', "%{$result}%")->orWhere('body', 'LIKE', "%{$result}%")->paginate(3);
 
         return view('news.news')->with('allNews', $allNews);
     }

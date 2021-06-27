@@ -13,7 +13,7 @@
                 @endif
                 @if(empty(session('user')->stripe_id))
                     <p class="lead">Aucun abonnement</p><br>
-                    <a href="/price">Utiliser une carte cadeau ou un code de promotion.</a>
+                    <p><a href="/price">Abonnez-vous</a> pour profiter de millions de livres en illimité.</p>
                 @else
                     <p class="lead">Abonnement Basic</p>
                     <span>Prochaine date de facturation : 28 juillet 2021.</span><br>

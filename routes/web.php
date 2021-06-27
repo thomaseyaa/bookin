@@ -33,7 +33,7 @@ Route::get('/passwordRecovery','App\Http\Controllers\AuthController@passwordReco
 
 // User routes
 Route::get('/admin','App\Http\Controllers\ProfileController@admin');
-Route::get('/profile','App\Http\Controllers\ProfileController@profile');
+Route::get('/profile','App\Http\Controllers\ProfileController@profile')->name('profile');
 Route::get('/profileForm','App\Http\Controllers\ProfileController@profileForm');
 Route::post('/updateUser','App\Http\Controllers\ProfileController@updateUser');
 Route::get('/passwordForm','App\Http\Controllers\ProfileController@passwordForm');

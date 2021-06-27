@@ -7,7 +7,7 @@
             @if(empty(session('user')->stripe_id))
                 <li class="mb-2"><a class="btn-link" href="/price">S'abonner</a></li>
             @else
-                <li class="mb-2"><a class="btn-link" href="/upgrade">Gérer mon abonnement</a></li>
+                <li class="mb-2"><a class="btn-link" href="{{ $url }}">Gérer mon abonnement</a></li>
             @endif
         </ul>
     </div>

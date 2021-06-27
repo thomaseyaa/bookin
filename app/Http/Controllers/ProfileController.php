@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -24,7 +25,9 @@ class ProfileController extends Controller
         if (session('user') == null){
             return view('auth');
         }
-        return view('profile.profile');
+
+        $url = User::find(session('user')->id)->billingPortalUrl(route('profile'));
+        return view('profile.profile')->with('url', $url);
     }
 
     public function profileForm(){
@@ -90,9 +93,5 @@ class ProfileController extends Controller
         session()->flash('message',"Modification enregistrée");
 
         return redirect('/profile');
-    }
-
-    public function billingPortal(){
-
     }
 }
