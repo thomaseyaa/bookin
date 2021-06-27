@@ -11,9 +11,14 @@
                 @else
                     <h1 class="display-4">{{ session('user')->firstname }} {{ session('user')->lastname }}</h1>
                 @endif
-                <p class="lead">Abonnement Basic</p>
-                <span>Prochaine date de facturation : 28 juillet 2021.</span><br>
-                <a href="#">Utiliser une carte cadeau ou un code de promotion.</a>
+                @if(empty(session('user')->stripe_id))
+                    <p class="lead">Aucun abonnement</p><br>
+                    <a href="/price">Utiliser une carte cadeau ou un code de promotion.</a>
+                @else
+                    <p class="lead">Abonnement Basic</p>
+                    <span>Prochaine date de facturation : 28 juillet 2021.</span><br>
+                    <a href="/price">Utiliser une carte cadeau ou un code de promotion.</a>
+                @endif
             </div>
         </div>
     </div>

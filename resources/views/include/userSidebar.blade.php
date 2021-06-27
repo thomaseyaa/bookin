@@ -4,7 +4,11 @@
             <li class="mb-3"><span class="initialism">Compte</span></li>
             <li class="mb-2"><a class="btn-link" href="/profileForm">Modifier mes informations</a></li>
             <li class="mb-2"><a class="btn-link" href="/passwordForm">Modifier mon mot de passe</a></li>
-            <li class="mb-2"><a class="btn-link" href="">Gérer mon abonnement</a></li>
+            @if(empty(session('user')->stripe_id))
+                <li class="mb-2"><a class="btn-link" href="/price">S'abonner</a></li>
+            @else
+                <li class="mb-2"><a class="btn-link" href="/upgrade">Gérer mon abonnement</a></li>
+            @endif
         </ul>
     </div>
 @elseif(session('user') != null && session('user')->is_admin == 1)

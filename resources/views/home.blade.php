@@ -110,19 +110,19 @@
                                 <div class="text-primary mr-3">
                                     <i class="fas fa-check-circle fa-lg"></i>
                                 </div>
-                                <span>Lorem ipsum dolor sit amet</span>
+                                <span>Traducteur intégré</span>
                             </div>
                             <div class="mb-2 d-flex align-items-start">
                                 <div class="text-danger mr-3">
                                     <i class="fas fa-times-circle fa-lg"></i>
                                 </div>
-                                <span>Lorem ipsum dolor sit amet</span>
+                                <span>2 écrans simultanés</span>
                             </div>
                             <div class="mb-2 d-flex align-items-start">
                                 <div class="text-danger mr-3">
                                     <i class="fas fa-times-circle fa-lg"></i>
                                 </div>
-                                <span>Lorem ipsum dolor sit amet</span>
+                                <span>Recommandations d'experts</span>
                             </div>
                         </div>
                     </div>
@@ -147,19 +147,19 @@
                                 <div class="text-primary mr-3">
                                     <i class="fas fa-check-circle fa-lg"></i>
                                 </div>
-                                <span>Lorem ipsum dolor sit amet</span>
+                                <span>Traducteur intégré</span>
                             </div>
                             <div class="mb-2 d-flex align-items-start">
                                 <div class="text-primary mr-3">
                                     <i class="fas fa-check-circle fa-lg"></i>
                                 </div>
-                                <span>Lorem ipsum dolor sit amet</span>
+                                <span>2 écrans simultanés</span>
                             </div>
                             <div class="mb-2 d-flex align-items-start">
                                 <div class="text-primary mr-3">
                                     <i class="fas fa-check-circle fa-lg"></i>
                                 </div>
-                                <span>Lorem ipsum dolor sit amet</span>
+                                <span>Recommandations d'experts</span>
                             </div>
                         </div>
                     </div>
