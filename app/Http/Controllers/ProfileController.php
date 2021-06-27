@@ -25,9 +25,12 @@ class ProfileController extends Controller
         if (session('user') == null){
             return view('auth');
         }
+        if (!empty(session('user')->stripe_id)){
+            $url = User::find(session('user')->id)->billingPortalUrl(route('profile'));
+            return view('profile.profile')->with('url', $url);
+        }
 
-        $url = User::find(session('user')->id)->billingPortalUrl(route('profile'));
-        return view('profile.profile')->with('url', $url);
+        return view('profile.profile');
     }
 
     public function profileForm(){

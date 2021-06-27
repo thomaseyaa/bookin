@@ -5,7 +5,7 @@
             <li class="mb-2"><a class="btn-link" href="/profileForm">Modifier mes informations</a></li>
             <li class="mb-2"><a class="btn-link" href="/passwordForm">Modifier mon mot de passe</a></li>
             @if(empty(session('user')->stripe_id))
-                <li class="mb-2"><a class="btn-link" href="/price">S'abonner</a></li>
+                <li class="mb-2"><a class="btn-link" href="/price">Choisir un abonnement</a></li>
             @else
                 <li class="mb-2"><a class="btn-link" href="{{ $url }}">Gérer mon abonnement</a></li>
             @endif
