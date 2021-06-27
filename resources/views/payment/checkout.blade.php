@@ -16,20 +16,14 @@
                             </div>
                         </div>
                         <div class="card-block px-lg-7 px-4 pb-5">
-                            @if($errors->any())
-                                <div class="alert alert-danger text-center">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                            @if(session('error'))
+                                <div class="alert alert-danger text-center ">{{ session('error') }}</div>
                             @endif
 
                             <form method="post" id="payment-form">
                                 @csrf
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Prénom et nom indiqués sur la carte">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nom et prénom indiqués sur la carte">
                                 </div>
                                 <div class="form-group"  class="mt-4">
                                     <div type="text" class="form-control" id="card-element"></div>
