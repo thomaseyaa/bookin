@@ -10,7 +10,7 @@ class NewsController extends Controller
 {
     public function showNews(){
 
-        $allNews = DB::table('news')->where('published', 1)->get();
+        $allNews = DB::table('news')->where('published', 1)->paginate(3);
         return view('news.news')->with('allNews', $allNews);
     }
 
@@ -23,7 +23,7 @@ class NewsController extends Controller
     public function searchNews(Request $request){
 
         $result = $request->input('searchBar');
-        $allNews = News::where('title', 'LIKE', "%{$result}%")->orWhere('body', 'LIKE', "%{$result}%")->get();
+        $allNews = News::where('title', 'LIKE', "%{$result}%")->orWhere('body', 'LIKE', "%{$result}%")->paginate(2);
 
         return view('news.news')->with('allNews', $allNews);
     }

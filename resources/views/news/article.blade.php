@@ -15,7 +15,7 @@
                     <div class="my-5 text-center">
                         <img class="w-100 rounded mb-3" src="{{ asset($news->img_url) }}" alt="{{ $news->title }}">
                     </div>
-                    <p>{{ $news->body }}</p>
+                    <p class="m-auto">{{ $news->body }}</p>
                 </div>
             </div>
         </div>
