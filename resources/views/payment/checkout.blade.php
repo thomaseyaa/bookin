@@ -25,7 +25,7 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Nom et prénom indiqués sur la carte">
                                 </div>
-                                <div class="form-group"  class="mt-4">
+                                <div class="form-group">
                                     <div type="text" class="form-control" id="card-element"></div>
                                     <div class="text-danger" id="card-errors" role="alert"></div>
                                 </div>

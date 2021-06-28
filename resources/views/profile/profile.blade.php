@@ -17,7 +17,6 @@
                 @else
                     <p class="lead">Abonnement Basic</p>
                     <span>Prochaine date de facturation : 28 juillet 2021.</span>
-                    <a href="/price">Utiliser une carte cadeau ou un code de promotion.</a>
                 @endif
             </div>
         </div>
